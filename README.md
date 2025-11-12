@@ -1,4 +1,4 @@
-# 📦 Run LLMs Locally on an NVIDIA GPU with a Web UI
+# 📦 Run LLMs locally on an NVIDIA GPU with Web UI
 
 > Custom Open-WebUI configuration with Ollama in Docker containers for running large‑language‑models locally on an NVIDIA GPU with a simple web UI.
 Accessible from all devices on your local network.
@@ -58,7 +58,7 @@ Optional: Add extra's according to the [Open WebUI Documentation](https://docs.o
 | Ollama     | ollama/ollama:latest               | CUDA        |
 | Open WebUI | ghcr.io/open-webui/open-webui:cuda | CUDA        |
 
-Both images are built with the CUDA‑runtime (nvidia/cuda:12.3.1-cudnn8-runtime-ubuntu22.04) and the NVIDIA Container Toolkit so that GPU memory is visible inside the containers.
+Both images are built with the CUDA‑runtime and the NVIDIA Container Toolkit so that GPU memory is visible inside the containers.
 
 > [!TIP]
 > If you want to run on a non‑GPU machine, replace the Open WebUI `image:` line in `docker-compose.yml` with the non‑GPU variant (`openwebui/openwebui:latest`) and drop the `device_requests:` block in the Ollama service. The containers will still start, however they will run in CPU‑only mode and will be far slower.
