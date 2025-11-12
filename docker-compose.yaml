@@ -2,6 +2,8 @@ services:
   ollama:
     image: ollama/ollama:latest
     container_name: ollama
+    networks:
+      - local-llm-network
     ports:
       - "11434:11434"
     volumes:
@@ -11,13 +13,15 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              capabilities: [gpu]
+              capabilities: [ gpu ]
               count: all
     restart: unless-stopped
 
   open-webui:
     image: ghcr.io/open-webui/open-webui:cuda
     container_name: open-webui
+    networks:
+      - local-llm-network
     volumes:
       - ./data/openwebui:/app/backend/data
     depends_on:
@@ -29,4 +33,7 @@ services:
     extra_hosts:
       - host.docker.internal:host-gateway
     restart: unless-stopped
-    
+
+networks:
+  local-llm-network:
+    driver: bridge
