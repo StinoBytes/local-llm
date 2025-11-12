@@ -60,7 +60,8 @@ Optional: Add extra's according to the [Open WebUI Documentation](https://docs.o
 
 Both images are built with the CUDA‑runtime (nvidia/cuda:12.3.1-cudnn8-runtime-ubuntu22.04) and the NVIDIA Container Toolkit so that GPU memory is visible inside the containers.
 
-    ⚠️ If you want to run on a non‑GPU machine, replace the Open WebUI 'image:' line in docker-compose.yml with the non‑GPU variant (openwebui/openwebui:latest) and drop the device_requests block in the Ollama service. The containers will still start but will run in CPU‑only mode and will be far slower.
+> [!TIP]
+> If you want to run on a non‑GPU machine, replace the Open WebUI `image:` line in `docker-compose.yml` with the non‑GPU variant (`openwebui/openwebui:latest`) and drop the `device_requests:` block in the Ollama service. The containers will still start, however they will run in CPU‑only mode and will be far slower.
 
 ---
 
