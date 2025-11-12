@@ -1,4 +1,4 @@
-# 📦 Run LLMs Locally on an NVIDIA GPU with a Web UI
+# 📦 Run LLMs locally on an NVIDIA GPU with Web UI
 
 > Custom Open-WebUI configuration with Ollama in Docker containers for running large‑language‑models locally on an NVIDIA GPU with a simple web UI.
 Accessible from all devices on your local network.
