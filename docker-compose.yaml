@@ -5,7 +5,7 @@ services:
     ports:
       - "11434:11434"
     volumes:
-      - ollama_data:/root/.ollama
+      - ./data/ollama:/root/.ollama
     deploy:
       resources:
         reservations:
@@ -19,7 +19,7 @@ services:
     image: ghcr.io/open-webui/open-webui:cuda
     container_name: open-webui
     volumes:
-      - openwebui_data:/app/backend/data
+      - ./data/openwebui:/app/backend/data
     depends_on:
       - ollama
     ports:
@@ -29,7 +29,4 @@ services:
     extra_hosts:
       - host.docker.internal:host-gateway
     restart: unless-stopped
-
-volumes:
-  ollama_data: {}
-  openwebui_data: {}
+    
